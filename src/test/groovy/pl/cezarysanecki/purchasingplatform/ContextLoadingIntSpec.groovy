@@ -1,4 +1,4 @@
-package pl.cezarysanecki.ecommerce;
+package pl.cezarysanecki.purchasingplatform;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

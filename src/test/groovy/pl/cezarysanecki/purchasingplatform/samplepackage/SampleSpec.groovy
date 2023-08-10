@@ -1,6 +1,6 @@
-package pl.cezarysanecki.ecommerce.samplepackage
+package pl.cezarysanecki.purchasingplatform.samplepackage
 
-import pl.cezarysanecki.ecommerce.AbstractSpec
+import pl.cezarysanecki.purchasingplatform.AbstractSpec
 
 class SampleSpec extends AbstractSpec {
 

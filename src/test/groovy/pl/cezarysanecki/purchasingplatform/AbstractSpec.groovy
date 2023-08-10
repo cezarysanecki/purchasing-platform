@@ -1,4 +1,4 @@
-package pl.cezarysanecki.ecommerce
+package pl.cezarysanecki.purchasingplatform
 
 import spock.lang.Specification
 
