@@ -1,4 +1,4 @@
-package pl.cezarysanecki.purchasingplatform.admin.infrastructure;
+package pl.cezarysanecki.purchasingplatform.verification.infrastructure;
 
 import lombok.AccessLevel;
 import lombok.NonNull;
@@ -9,7 +9,7 @@ import pl.cezarysanecki.purchasingplatform.onboarding.api.LeadingEvent;
 
 @Component
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
-class AdminEventListener {
+class VerificationEventListener {
 
   @EventListener
   public void handle(@NonNull LeadingEvent.RegistrationFormRegistered event) {
