@@ -1,7 +1,7 @@
 package pl.cezarysanecki.purchasingplatform.onboarding;
 
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.RegistrationFormId;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.SellerRegistrationForm;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.RegistrationFormId;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.SellerRegistrationForm;
 
 interface LeadingRepository {
 

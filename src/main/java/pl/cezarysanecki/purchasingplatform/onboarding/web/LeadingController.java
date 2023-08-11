@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.cezarysanecki.purchasingplatform.onboarding.LeadingFacade;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.RegistrationFormId;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.SellerRegistrationForm;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.RegistrationFormId;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.SellerRegistrationForm;
 
 @RestController
 @RequestMapping("/onboarding")

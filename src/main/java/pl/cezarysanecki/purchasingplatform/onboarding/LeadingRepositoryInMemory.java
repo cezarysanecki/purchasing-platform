@@ -2,9 +2,9 @@ package pl.cezarysanecki.purchasingplatform.onboarding;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.RegistrationFormId;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.RegistrationFormNotFoundException;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.SellerRegistrationForm;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.RegistrationFormId;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.RegistrationFormNotFoundException;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.SellerRegistrationForm;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

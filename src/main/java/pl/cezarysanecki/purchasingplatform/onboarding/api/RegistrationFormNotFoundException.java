@@ -1,4 +1,4 @@
-package pl.cezarysanecki.purchasingplatform.onboarding.dto;
+package pl.cezarysanecki.purchasingplatform.onboarding.api;
 
 public class RegistrationFormNotFoundException extends RuntimeException {
 

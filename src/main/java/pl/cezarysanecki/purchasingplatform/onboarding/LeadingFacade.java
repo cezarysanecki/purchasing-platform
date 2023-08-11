@@ -3,8 +3,8 @@ package pl.cezarysanecki.purchasingplatform.onboarding;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.RegistrationFormId;
-import pl.cezarysanecki.purchasingplatform.onboarding.dto.SellerRegistrationForm;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.RegistrationFormId;
+import pl.cezarysanecki.purchasingplatform.onboarding.api.SellerRegistrationForm;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class LeadingFacade {
