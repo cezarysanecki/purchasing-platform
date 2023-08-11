@@ -15,14 +15,18 @@ public interface LeadingEvent extends DomainEvent {
   class RegistrationFormRegistered implements LeadingEvent {
 
     @NonNull
-    RegistrationFormId registrationFormId;
-    @NonNull
     UUID eventId = UUID.randomUUID();
     @NonNull
     Instant when = Instant.now();
+    @NonNull
+    RegistrationFormId registrationFormId;
+    @NonNull
+    SellerRegistrationForm registrationForm;
 
-    public static LeadingEvent now(final RegistrationFormId registrationFormId) {
-      return new RegistrationFormRegistered(registrationFormId);
+    public static LeadingEvent now(
+        final RegistrationFormId registrationFormId,
+        final SellerRegistrationForm registrationForm) {
+      return new RegistrationFormRegistered(registrationFormId, registrationForm);
     }
 
   }
