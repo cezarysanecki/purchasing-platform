@@ -1,18 +1,23 @@
 package pl.cezarysanecki.purchasingplatform.onboarding;
 
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 
 @Configuration
-@RequiredArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 class LeadingConfig {
 
+  private final LeadingRepository leadingRepository;
+
+  public static LeadingConfig forTests() {
+    return new LeadingConfig(new LeadingRepositoryInMemory());
+  }
+
   @Bean
-  @Profile("dev")
-  LeadingRepository leadingRepository() {
-    return new LeadingRepositoryInMemory();
+  LeadingFacade leadingFacade() {
+    return new LeadingFacade(leadingRepository);
   }
 
 }
