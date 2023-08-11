@@ -1,11 +1,13 @@
 package pl.cezarysanecki.purchasingplatform.shared;
 
 import lombok.NonNull;
+import lombok.Value;
 
+@Value
 public class Regon {
 
   @NonNull
-  private final String regon;
+  String regon;
 
   public Regon(final String regon) {
     if (regon.length() != 9) {
