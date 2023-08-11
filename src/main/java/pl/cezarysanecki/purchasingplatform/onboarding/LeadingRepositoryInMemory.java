@@ -3,6 +3,7 @@ package pl.cezarysanecki.purchasingplatform.onboarding;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import pl.cezarysanecki.purchasingplatform.onboarding.dto.RegistrationFormId;
+import pl.cezarysanecki.purchasingplatform.onboarding.dto.RegistrationFormNotFoundException;
 import pl.cezarysanecki.purchasingplatform.onboarding.dto.SellerRegistrationForm;
 
 import java.util.Map;
@@ -19,6 +20,15 @@ class LeadingRepositoryInMemory implements LeadingRepository {
     RegistrationFormId registrationFormId = RegistrationFormId.generate();
     database.put(registrationFormId, sellerRegistrationForm);
     return registrationFormId;
+  }
+
+  @Override
+  public SellerRegistrationForm findOne(final RegistrationFormId registrationFormId) {
+    SellerRegistrationForm result = database.get(registrationFormId);
+    if (result == null) {
+      throw new RegistrationFormNotFoundException(registrationFormId);
+    }
+    return result;
   }
 
 }

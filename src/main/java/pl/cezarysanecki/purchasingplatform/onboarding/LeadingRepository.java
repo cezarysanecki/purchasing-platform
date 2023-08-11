@@ -7,4 +7,6 @@ interface LeadingRepository {
 
   RegistrationFormId save(final SellerRegistrationForm sellerRegistrationForm);
 
+  SellerRegistrationForm findOne(final RegistrationFormId registrationFormId);
+
 }
