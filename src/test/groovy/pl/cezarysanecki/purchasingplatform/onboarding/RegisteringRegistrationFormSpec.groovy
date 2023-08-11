@@ -17,10 +17,10 @@ class RegisteringRegistrationFormSpec extends AbstractOnBoardingSpec {
           .regon(Regon.of("123456789"))
           .address(
               Address.builder()
-                  .street("Test Street")
-                  .houseNumber(12)
-                  .city("Test City")
-                  .zipCode("01-555")
+                  .street(Address.Street.of("Test Street"))
+                  .houseNumber(Address.HouseNumber.of(12))
+                  .postalCode(Address.PostalCode.of("01-555"))
+                  .city(Address.City.of("Test City"))
                   .build())
           .email(Email.of("test@test.pl"))
           .phoneNumber(PhoneNumber.of("123456789"))
@@ -29,7 +29,7 @@ class RegisteringRegistrationFormSpec extends AbstractOnBoardingSpec {
     when:
       RegistrationFormId registrationFormId = sut.register(registrationForm)
     and:
-      SellerRegistrationForm result = sut.show(registrationForm)
+      SellerRegistrationForm result = sut.show(registrationFormId)
     
     then:
       result == registrationForm
