@@ -3,7 +3,7 @@ package pl.cezarysanecki.purchasingplatform.shared.model;
 import lombok.NonNull;
 import lombok.Value;
 
-@Value
+@Value(staticConstructor = "of")
 public class PhoneNumber {
 
   @NonNull

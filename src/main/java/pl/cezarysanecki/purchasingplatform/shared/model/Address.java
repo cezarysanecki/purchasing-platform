@@ -1,12 +1,14 @@
 package pl.cezarysanecki.purchasingplatform.shared.model;
 
 import jakarta.annotation.Nullable;
+import lombok.Builder;
 import lombok.NonNull;
 import lombok.Value;
 
 import java.util.Optional;
 
 @Value
+@Builder
 public class Address {
 
   @NonNull
@@ -24,7 +26,7 @@ public class Address {
     return Optional.ofNullable(flatNumber);
   }
 
-  @Value
+  @Value(staticConstructor = "of")
   public static class Street {
 
     @NonNull
@@ -36,7 +38,7 @@ public class Address {
     }
   }
 
-  @Value
+  @Value(staticConstructor = "of")
   public static class HouseNumber {
 
     @NonNull
@@ -48,7 +50,7 @@ public class Address {
     }
   }
 
-  @Value
+  @Value(staticConstructor = "of")
   public static class FlatNumber {
 
     @NonNull
@@ -60,7 +62,7 @@ public class Address {
     }
   }
 
-  @Value
+  @Value(staticConstructor = "of")
   public static class PostalCode {
 
     @NonNull
@@ -72,7 +74,7 @@ public class Address {
     }
   }
 
-  @Value
+  @Value(staticConstructor = "of")
   public static class City {
 
     @NonNull
