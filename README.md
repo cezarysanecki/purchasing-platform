@@ -30,8 +30,15 @@ Kupujący mogą kupować produkty wystawione przez sprzedawców. Mogą tego doko
 - brak wsparcia platformy podczas reklamacji
 - brak komunikacji ze sprzedawcą przez platformę
 - brak śledzenia przesyłki przez platformę
+- limity zakupowe (?)
 
 Rejestracja pozwala na powyższe ograniczenia oraz:
 - pozwala zapisać adres dostawy
 - pozwala zapisać kartę kredytową
 - pozwala dodawać produkty do ulubionych
+
+Sprzedawca będzie mógł zdecydować czy chce zatwierdzić zamówienie czy ma się to zrobić automatycznie. Automatyczne zatwierdzenie będzie miało możliwość dostosowania:
+- ilość sztuk dla jednego zamówienia na osobę
+- czy możliwość zakupu przez osoby niezarejestrowane
+
+Kupujący mogą oceniać osobno produkty oraz sprzedawców.
