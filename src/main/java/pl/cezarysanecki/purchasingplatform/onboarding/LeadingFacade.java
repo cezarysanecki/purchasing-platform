@@ -14,4 +14,8 @@ public class LeadingFacade {
     return leadingRepository.save(sellerRegistrationForm);
   }
 
+  public SellerRegistrationForm show(final RegistrationFormId registrationFormId) {
+    return leadingRepository.findOne(registrationFormId);
+  }
+
 }
