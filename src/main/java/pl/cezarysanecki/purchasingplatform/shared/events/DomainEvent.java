@@ -7,8 +7,6 @@ public interface DomainEvent {
 
   UUID getEventId();
 
-  UUID getAggregateId();
-
   Instant getWhen();
 
 }
