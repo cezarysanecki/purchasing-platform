@@ -2,11 +2,11 @@ package pl.cezarysanecki.purchasingplatform.onboarding.dto;
 
 import lombok.NonNull;
 import lombok.Value;
-import pl.cezarysanecki.purchasingplatform.shared.Address;
-import pl.cezarysanecki.purchasingplatform.shared.CompanyName;
-import pl.cezarysanecki.purchasingplatform.shared.Email;
-import pl.cezarysanecki.purchasingplatform.shared.PhoneNumber;
-import pl.cezarysanecki.purchasingplatform.shared.Regon;
+import pl.cezarysanecki.purchasingplatform.shared.model.Address;
+import pl.cezarysanecki.purchasingplatform.shared.model.CompanyName;
+import pl.cezarysanecki.purchasingplatform.shared.model.Email;
+import pl.cezarysanecki.purchasingplatform.shared.model.PhoneNumber;
+import pl.cezarysanecki.purchasingplatform.shared.model.Regon;
 
 @Value
 public class SellerRegistrationForm {

@@ -1,4 +1,4 @@
-package pl.cezarysanecki.purchasingplatform.shared;
+package pl.cezarysanecki.purchasingplatform.shared.model;
 
 import lombok.NonNull;
 import lombok.Value;
