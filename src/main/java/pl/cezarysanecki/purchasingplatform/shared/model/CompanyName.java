@@ -1,24 +1,19 @@
 package pl.cezarysanecki.purchasingplatform.shared.model;
 
 import lombok.NonNull;
-import lombok.Value;
 
-@Value(staticConstructor = "of")
-public class CompanyName {
+public record CompanyName(@NonNull String value) {
 
-  @NonNull
-  String companyName;
-
-  public CompanyName(final String companyName) {
-    if (companyName.length() < 3) {
-      throw new IllegalArgumentException("Company name must be at least 3 characters long");
+  public CompanyName(final String value) {
+    if (value.length() < 3 || value.length() > 50) {
+      throw new IllegalArgumentException("Company name must be between 3 and 50 characters");
     }
-    this.companyName = companyName;
+    this.value = value;
   }
 
   @Override
   public String toString() {
-    return companyName;
+    return value;
   }
 
 }

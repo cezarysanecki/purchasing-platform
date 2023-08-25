@@ -1,24 +1,19 @@
 package pl.cezarysanecki.purchasingplatform.shared.model;
 
 import lombok.NonNull;
-import lombok.Value;
 
-@Value(staticConstructor = "of")
-public class Email {
+public record Email(@NonNull String value) {
 
-  @NonNull
-  String email;
-
-  public Email(final String email) {
-    if (!email.contains("@")) {
-      throw new IllegalArgumentException("Email must contain @");
+  public Email(final String value) {
+    if (!value.matches("^.+@.+\\..+$")) {
+      throw new IllegalArgumentException("Email must fulfill specified format");
     }
-    this.email = email;
+    this.value = value;
   }
 
   @Override
   public String toString() {
-    return email;
+    return value;
   }
 
 }

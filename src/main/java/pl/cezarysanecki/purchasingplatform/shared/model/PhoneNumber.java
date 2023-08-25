@@ -1,24 +1,19 @@
 package pl.cezarysanecki.purchasingplatform.shared.model;
 
 import lombok.NonNull;
-import lombok.Value;
 
-@Value(staticConstructor = "of")
-public class PhoneNumber {
+public record PhoneNumber(@NonNull String value) {
 
-  @NonNull
-  String phoneNumber;
-
-  public PhoneNumber(final String phoneNumber) {
-    if (phoneNumber.length() != 9) {
+  public PhoneNumber(final String value) {
+    if (value.length() != 9) {
       throw new IllegalArgumentException("Phone number must be 9 digits long");
     }
-    this.phoneNumber = phoneNumber;
+    this.value = value;
   }
 
   @Override
   public String toString() {
-    return phoneNumber;
+    return value;
   }
 
 }

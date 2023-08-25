@@ -26,11 +26,14 @@ public class Address {
     return Optional.ofNullable(flatNumber);
   }
 
-  @Value(staticConstructor = "of")
-  public static class Street {
+  public record Street(@NonNull String value) {
 
-    @NonNull
-    String value;
+    public Street(final String value) {
+      if (value.length() < 3 || value.length() > 50) {
+        throw new IllegalArgumentException("Street must be between 3 and 50 characters");
+      }
+      this.value = value;
+    }
 
     @Override
     public String toString() {
@@ -38,47 +41,60 @@ public class Address {
     }
   }
 
-  @Value(staticConstructor = "of")
-  public static class HouseNumber {
+  public record HouseNumber(@NonNull String value) {
 
-    @NonNull
-    int houseNumber;
+    public HouseNumber(final String value) {
+      if (!value.matches("\\d{1,3}[A-Z]?")) {
+        throw new IllegalArgumentException("House number must fulfill specified format");
+      }
+      this.value = value;
+    }
 
     @Override
     public String toString() {
-      return String.valueOf(houseNumber);
+      return value;
     }
   }
 
-  @Value(staticConstructor = "of")
-  public static class FlatNumber {
+  public record FlatNumber(@NonNull String value) {
 
-    @NonNull
-    int flatNumber;
+    public FlatNumber(final String value) {
+      if (!value.matches("\\d{1,3}[A-Z]?")) {
+        throw new IllegalArgumentException("Flat number must fulfill specified format");
+      }
+      this.value = value;
+    }
 
     @Override
     public String toString() {
-      return String.valueOf(flatNumber);
+      return value;
     }
   }
 
-  @Value(staticConstructor = "of")
-  public static class PostalCode {
+  public record PostalCode(@NonNull String value) {
 
-    @NonNull
-    String postalCode;
+    public PostalCode(final String value) {
+      if (!value.matches("\\d{2}-\\d{3}")) {
+        throw new IllegalArgumentException("Postal code must fulfill specified format");
+      }
+      this.value = value;
+    }
 
     @Override
     public String toString() {
-      return postalCode;
+      return value;
     }
   }
 
-  @Value(staticConstructor = "of")
-  public static class City {
+  public record City(@NonNull String value) {
 
-    @NonNull
-    String value;
+    public City(final String value) {
+      if (value.length() < 3 || value.length() > 50) {
+        throw new IllegalArgumentException("City must be between 3 and 50 characters");
+      }
+      this.value = value;
+    }
+
 
     @Override
     public String toString() {

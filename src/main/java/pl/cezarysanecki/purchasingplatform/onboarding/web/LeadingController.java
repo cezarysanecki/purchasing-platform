@@ -19,8 +19,8 @@ class LeadingController {
   private final LeadingFacade leadingFacade;
 
   @PostMapping("/register")
-  RegistrationFormId register(@RequestBody SellerRegistrationForm form) {
-    return leadingFacade.register(form);
+  RegistrationFormId register(@RequestBody RegistrationFormDto form) {
+    return leadingFacade.register(form.toSellerRegistrationForm());
   }
 
   @GetMapping("/show")

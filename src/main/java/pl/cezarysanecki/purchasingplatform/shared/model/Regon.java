@@ -1,24 +1,19 @@
 package pl.cezarysanecki.purchasingplatform.shared.model;
 
 import lombok.NonNull;
-import lombok.Value;
 
-@Value(staticConstructor = "of")
-public class Regon {
+public record Regon(@NonNull String value) {
 
-  @NonNull
-  String regon;
-
-  public Regon(final String regon) {
-    if (regon.length() != 9) {
+  public Regon(final String value) {
+    if (value.length() != 9) {
       throw new IllegalArgumentException("Regon must be 9 digits long");
     }
-    this.regon = regon;
+    this.value = value;
   }
 
   @Override
   public String toString() {
-    return regon;
+    return value;
   }
 
 }
