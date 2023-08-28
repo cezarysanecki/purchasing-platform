@@ -16,7 +16,9 @@ class VerificationEventListener {
 
   @EventListener
   public void handle(@NonNull LeadingEvent.RegistrationFormRegistered event) {
-    verificationFacade.saveNew(event.getRegistrationForm());
+    verificationFacade.saveNew(
+        event.getRegistrationFormId(),
+        event.getRegistrationForm());
   }
 
 }
