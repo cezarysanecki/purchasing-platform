@@ -37,17 +37,17 @@ class RegisteringRegistrationFormSpec extends AbstractOnBoardingSpec {
   
   private SellerRegistrationForm sellerRegistrationForm() {
     return SellerRegistrationForm.builder()
-        .companyName(CompanyName.of("Test"))
-        .regon(Regon.of("123456789"))
+        .companyName(new CompanyName("Test"))
+        .regon(new Regon("123456789"))
         .address(
             Address.builder()
-                .street(Address.Street.of("Test Street"))
-                .houseNumber(Address.HouseNumber.of(12))
-                .postalCode(Address.PostalCode.of("01-555"))
-                .city(Address.City.of("Test City"))
+                .street(new Address.Street("Test Street"))
+                .houseNumber(new Address.HouseNumber("12"))
+                .postalCode(new Address.PostalCode("01-555"))
+                .city(new Address.City("Test City"))
                 .build())
-        .email(Email.of("test@test.pl"))
-        .phoneNumber(PhoneNumber.of("123456789"))
+        .email(new Email("test@test.pl"))
+        .phoneNumber(new PhoneNumber("123456789"))
         .build()
   }
   
