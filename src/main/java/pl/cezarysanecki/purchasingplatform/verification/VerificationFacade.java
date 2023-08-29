@@ -4,16 +4,17 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import pl.cezarysanecki.purchasingplatform.onboarding.api.RegistrationFormId;
 import pl.cezarysanecki.purchasingplatform.onboarding.api.SellerRegistrationForm;
-import pl.cezarysanecki.purchasingplatform.shared.json.JsonWrapper;
+import pl.cezarysanecki.purchasingplatform.shared.json.Json;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class VerificationFacade {
 
-  private final JsonWrapper jsonWrapper;
   private final VerificationRepository verificationRepository;
 
-  public void saveNew(final RegistrationFormId registrationFormId, final SellerRegistrationForm registrationForm) {
-    verificationRepository.saveNew(registrationFormId, jsonWrapper.wrap(registrationForm));
+  public void saveFormView(
+      final RegistrationFormId registrationFormId,
+      final Json<SellerRegistrationForm> registrationForm) {
+    verificationRepository.saveNew(registrationFormId, registrationForm);
   }
 
 }

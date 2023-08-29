@@ -5,14 +5,18 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
-public class JsonWrapper {
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+public class JsonWrapper<T> {
 
-  private final ObjectMapper objectMapper;
+  private final T data;
+
+  public static <T> JsonWrapper<T> wrap(final T data) {
+    return new JsonWrapper<>(data);
+  }
 
   @SneakyThrows
-  public Json wrap(final Object object) {
-    return Json.wrap(objectMapper.writeValueAsString(object));
+  public Json<T> convert(final ObjectMapper objectMapper) {
+    return new Json<>(objectMapper.writeValueAsString(data));
   }
 
 }

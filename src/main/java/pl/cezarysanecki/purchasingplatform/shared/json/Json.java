@@ -3,17 +3,18 @@ package pl.cezarysanecki.purchasingplatform.shared.json;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class Json {
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+public class Json<T> {
 
-  private final String data;
+  private final String jsonValue;
 
-  static Json wrap(final String data) {
-    return new Json(data);
+  static <T> Json<T> create(final String jsonValue) {
+    return new Json<>(jsonValue);
   }
 
   @Override
   public String toString() {
-    return data;
+    return jsonValue;
   }
+
 }
