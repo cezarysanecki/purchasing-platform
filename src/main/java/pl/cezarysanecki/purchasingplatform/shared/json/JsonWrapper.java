@@ -16,7 +16,7 @@ public class JsonWrapper<T> {
 
   @SneakyThrows
   public Json<T> convert(final ObjectMapper objectMapper) {
-    return new Json<>(objectMapper.writeValueAsString(data));
+    return Json.create(objectMapper.writeValueAsString(data));
   }
 
 }
