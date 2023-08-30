@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
-public class FormatValidationExceptionAdvice {
+class FormatValidationExceptionAdvice {
 
   private static final HttpStatus HTTP_STATUS = HttpStatus.BAD_REQUEST;
 
