@@ -17,7 +17,7 @@ public class LeadingFacade {
   @Transactional
   public RegistrationFormId register(final SellerRegistrationForm sellerRegistrationForm) {
     RegistrationFormId registrationFormId = leadingRepository.save(sellerRegistrationForm);
-    publisher.publish(LeadingEvent.RegistrationFormRegistered.now(
+    publisher.publish(LeadingEvent.RegistrationFormRegistered.now( // ADR: #001
         registrationFormId, sellerRegistrationForm));
     return registrationFormId;
   }
