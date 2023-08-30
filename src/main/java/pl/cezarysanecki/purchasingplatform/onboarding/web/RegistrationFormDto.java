@@ -4,7 +4,6 @@ import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import lombok.NonNull;
 import org.hibernate.validator.constraints.Length;
 import pl.cezarysanecki.purchasingplatform.onboarding.api.SellerRegistrationForm;
 import pl.cezarysanecki.purchasingplatform.shared.model.Address;
@@ -15,11 +14,11 @@ import pl.cezarysanecki.purchasingplatform.shared.model.Regon;
 
 import java.util.Optional;
 
-record RegistrationFormDto(@NonNull @Length(min = 3, max = 50) String companyName,
-                           @NonNull @Pattern(regexp = "\\d{9}") String regon,
-                           @NonNull @Valid AddressDto address,
-                           @NonNull @Pattern(regexp = "^.+@.+\\..+$") String email,
-                           @NonNull @Pattern(regexp = "\\d{9}") String phoneNumber) {
+record RegistrationFormDto(@NotNull @Length(min = 3, max = 50) String companyName,
+                           @NotNull @Pattern(regexp = "\\d{9}") String regon,
+                           @NotNull @Valid AddressDto address,
+                           @NotNull @Pattern(regexp = "^.+@.+\\..+$") String email,
+                           @NotNull @Pattern(regexp = "\\d{9}") String phoneNumber) {
 
   SellerRegistrationForm toSellerRegistrationForm() {
     return SellerRegistrationForm.builder()
