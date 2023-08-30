@@ -1,6 +1,7 @@
 package pl.cezarysanecki.purchasingplatform.onboarding.web;
 
 import jakarta.annotation.Nullable;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.NonNull;
@@ -16,7 +17,7 @@ import java.util.Optional;
 
 record RegistrationFormDto(@NonNull @Length(min = 3, max = 50) String companyName,
                            @NonNull @Pattern(regexp = "\\d{9}") String regon,
-                           @NonNull AddressDto address,
+                           @NonNull @Valid AddressDto address,
                            @NonNull @Pattern(regexp = "^.+@.+\\..+$") String email,
                            @NonNull @Pattern(regexp = "\\d{9}") String phoneNumber) {
 

@@ -1,5 +1,6 @@
 package pl.cezarysanecki.purchasingplatform.onboarding.web;
 
+import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ class LeadingController {
   private final LeadingFacade leadingFacade;
 
   @PostMapping("/register")
-  RegistrationFormId register(@RequestBody RegistrationFormDto form) {
+  RegistrationFormId register(@RequestBody @Valid RegistrationFormDto form) {
     return leadingFacade.register(form.toSellerRegistrationForm());
   }
 
